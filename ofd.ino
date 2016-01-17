@@ -62,7 +62,7 @@ void loop() {
   delay(60000);
 }
 
-std::vector<float> setColors(std::string colors_string){
+std::vector<float> parseColors(std::string colors_string){
   std::vector<float> colors;
   std::string delimiter = ";";
   size_t pos = 0;
@@ -111,7 +111,7 @@ void gotOnlineStatus(const char *event, const char *data) {
 
     errors = 0;
 
-    colors = setColors(input);
+    colors = parseColors(input);
 
     for(int i = 0; i < elements; i++) {
       pixels.setBrightness(255);
